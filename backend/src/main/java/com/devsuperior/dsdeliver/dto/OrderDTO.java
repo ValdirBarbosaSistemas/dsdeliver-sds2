@@ -10,9 +10,9 @@ import com.devsuperior.dsdeliver.entities.Order;
 import com.devsuperior.dsdeliver.entities.OrderStatus;
 
 public class OrderDTO implements Serializable {
-	
+	// FIXME VER DEPOIS A IMPORTÂNCIA DO (DTO) COM MAIS AFINCO
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String address;
 	private Double latitude;

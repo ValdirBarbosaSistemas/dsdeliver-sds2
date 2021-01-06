@@ -18,7 +18,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
+	// CONFIGURAÇÃO DE SEGURANÇA DA APLICAÇÃO (VER MAIS SOBRE O ASSUNTO)
+
+	@Autowired // VER MAIS SOBRE INJEÇÃO DE DEPENDÊNCIA
 	private Environment env;
 
 	@Override
@@ -27,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			http.headers().frameOptions().disable();
 		}
 
-		http.cors().and().csrf().disable(); // Desabilitando o csrf que é um tipo de ataque baseado em seção
+		http.cors().and().csrf().disable(); // Desabilitando o csrf que é um tipo de ataque baseado em sessão
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		// No código acima diz que não armazena estado
 		http.authorizeRequests().anyRequest().permitAll(); // Nesse código estamos dando total acesso a todas as
