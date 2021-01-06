@@ -44,4 +44,14 @@ public class OrderService {
 		// Neste código acima, ele vai inserir um novo pedido associado aos produtos
 		// dele
 	}
+
+	@Transactional // Sempre quando houver essa annotation quer dizer que vai ter alteração no
+					// banco
+	public OrderDTO setDelivered(Long id) {
+		Order order = repository.getOne(id); // Lembrando que aqui ele não ta pegando no banco
+		order.setStatus(OrderStatus.DELIVERED);
+		order = repository.save(order); // Aqui ele salva os dados e envia ao banco
+		return new OrderDTO(order);
+	}
+
 }
