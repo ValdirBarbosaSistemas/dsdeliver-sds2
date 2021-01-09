@@ -1,12 +1,15 @@
 import './App.css';
+import Home from './Home';
 import Navbar from './Navbar';
 
 function App() {
   return (
-    <div >
+    <>
       <Navbar />
-    </div>
+      <Home />
+    </>
   );
 }
-
+/*ESTUDAR MAIS SOBRE FRAGMENT*/
+//VER MAIS SOBRE O APLICATIVO FIGMA
 export default App;
