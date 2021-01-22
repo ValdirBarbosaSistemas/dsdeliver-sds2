@@ -15,6 +15,7 @@ import com.devsuperior.dsdeliver.services.ProductService;
 @RequestMapping(value = "/products")
 public class ProductController {
 
+	// FIXME ESTUDAR MAIS SOBRE O CONTROLADOR REST
 	@Autowired
 	private ProductService service;
 

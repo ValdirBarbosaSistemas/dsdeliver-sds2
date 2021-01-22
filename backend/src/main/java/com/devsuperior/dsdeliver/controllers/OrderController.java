@@ -24,21 +24,20 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 
-	@GetMapping
+	@GetMapping // recebendo os dados
 	public ResponseEntity<List<OrderDTO>> findAll() {
 		List<OrderDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
-	@PostMapping
+	@PostMapping // enviando os dados
 	public ResponseEntity<OrderDTO> insert(@RequestBody OrderDTO dto) {
 		dto = service.insert(dto);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(dto.getId()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}
 
-	@PutMapping("/{id}/delivered")
+	@PutMapping("/{id}/delivered") // atualizando os dados
 	public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id) {
 		OrderDTO dto = service.setDelivered(id);
 		return ResponseEntity.ok().body(dto);

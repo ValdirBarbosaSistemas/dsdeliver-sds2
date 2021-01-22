@@ -9,7 +9,7 @@ function Routes() {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route path="/orders">
+                <Route path="/orders"> {/*Quando for digitado na url irá para os pedidos*/}
                     <Orders />
                 </Route>
                 <Route path="/">
@@ -21,3 +21,4 @@ function Routes() {
 }
 export default Routes;
 //ESTUDAR MAIS SOBRE REACT ROUTE
+//A ROTA É USADA ATRAVÉS DA URL DO NAVEGADOR

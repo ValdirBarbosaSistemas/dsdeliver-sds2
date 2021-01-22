@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,11 +29,18 @@ public class Order implements Serializable {
 	private Double latitude;
 	private Double longitude;
 	private Instant moment;
+
+	@Enumerated(EnumType.STRING)
 	private OrderStatus status;
 
 	@ManyToMany
-	@JoinTable(name = "tb_order_product", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
+	@JoinTable(name = "tb_order_product", joinColumns = @JoinColumn(name = "order_id"), 
+	inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private Set<Product> products = new HashSet<>();
+	/*
+	 * No código acima está criando uma 3 tabela e unindo as entidades 'Order e
+	 * Product' em uma só (que no caso é a 3 tabela)
+	 */
 
 	// Construtor padrão
 	public Order() {
@@ -101,6 +110,11 @@ public class Order implements Serializable {
 	public Set<Product> getProducts() {
 		return products;
 	}
+
+	/*
+	 * Não colocamos o setProducts devido a não fazer nehuma alteração de tirar os
+	 * produtos da lista e sim pegar as informações dos produtos na lista
+	 */
 
 	@Override
 	public int hashCode() {

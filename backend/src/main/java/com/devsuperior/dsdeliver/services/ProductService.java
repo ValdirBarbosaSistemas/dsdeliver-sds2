@@ -21,5 +21,8 @@ public class ProductService {
 	public List<ProductDTO> findAll() {
 		List<Product> list = repository.findAllByOrderByNameAsc();
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
+
+		// DTO significa que ele só vai mandar ao cliente os dados do que EU PERMITIR
+
 	}
 }
