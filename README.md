@@ -11,6 +11,6 @@ Projeto realizado na semana Dev Superior com o Professor Nélio Alves com as seg
 
 ## *HTML*
 ## *CSS*
-## *Typscript*
+## *Typescript*
 ## *React*
 ## *React Native*
