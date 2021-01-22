@@ -1,18 +1,35 @@
-import { ReactComponent as Pizza } from './pizzacalabresaacebolada.svg';
+// import { ReactComponent as Pizza } from './pizzacalabresaacebolada 1.svg';
+import { Product } from './types';
 
-function ProductCard() {
+//Adicionando os produtos de forma DINÂMICA
+
+type Props = {
+    product: Product
+}
+
+function formatPrice(price: number) {
+    const formatter = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+    return formatter.format(price)
+}
+
+
+function ProductCard({ product }: Props) {
     return (
         <div className="order-card-container">
             <h3 className="order-card-title">
-                Pizza Calabresa
+                {product.name}
             </h3>
-            <Pizza className="order-card-image" />
+            <img alt={product.name} src={product.imageUri} className="order-card-image" />
             <h3 className="order-card-price">
-                R$ 35,90
+                {/* R$ {product.price} */}
+                {formatPrice(product.price)}
             </h3>
             <div className="order-card-description">
                 <h3>
-                    Descrição
+                    {product.description}
                 </h3>
                 <p>
                     Descrição Uma deliciosa combinação de linguiça calabresa, rodelas de azeitonas pretas, mussarela, poupa de tomate, orégano e massa especial.
