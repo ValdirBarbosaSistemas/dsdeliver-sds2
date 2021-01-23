@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+.env
 
 #Arquivos de estudos para testes
 Hello.tsx

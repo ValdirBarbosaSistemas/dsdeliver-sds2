@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../api';
+import OrderLocation from './OrderLocation';
 import ProductsList from './ProductsList';
 import StepsHeader from './StepsHeader';
 import './styles.css';
-import { Product } from './types';
+import { OrderLocationdata, Product } from './types';
 
 function Orders() { //Será o responsável de tirar as informações do Backend para o Frontend
 
     const [products, setProducts] = useState<Product[]>([]);//Criando um estado
+    const [orderLocation, setOrderLocation] = useState<OrderLocationdata>()
 
     console.log(products)
 
@@ -23,6 +25,7 @@ function Orders() { //Será o responsável de tirar as informações do Backend 
             {/* <h1>Orders</h1> */}
             <StepsHeader />
             <ProductsList products={products} /> {/*VER PRODUCTSLIST*/}
+            <OrderLocation onChangeLocation={location => setOrderLocation(location)} />
         </div>
     )
 }
