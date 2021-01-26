@@ -46,7 +46,7 @@ function Orders() { //Será o responsável de tirar as informações do Backend 
             products: productsIds
         }
         saveOrder(payload).then((response) => {
-            toast.error(`Pedido enviado com sucesso de Nº {response.data.id}!`) //ver a biblioteca 'toastify'
+            toast.error(`Pedido enviado com sucesso de Nº ${response.data.id}!`) //ver a biblioteca 'toastify'
             setSelectedProducts([])
         })
             .catch(() => {
