@@ -1,4 +1,5 @@
 import axios from "axios";
+import { OrderPayload } from "./Orders/types";
 
 const API_URL = "http://localhost:8080";
 const mapboxToken = process.env.REACT_APP_ACCESS_TOKEN_MAP_BOX; //Chamando o token criado
@@ -13,3 +14,7 @@ export function fetchLocalMapBox(local: string) {
   );
 }
 //PARA PODER LOCALIZAR OS LUGARES É PRECISO CRIAR UMA CONTA DO MAPBOX E PEGAR O TOKEN
+
+export function saveOrder(payload: OrderPayload) {
+  return axios.post(`${API_URL}/orders`, payload);
+} //SALVANDO OS DADOS NO BANCO DE DADOS
