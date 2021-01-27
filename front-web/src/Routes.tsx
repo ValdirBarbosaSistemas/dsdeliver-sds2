@@ -4,16 +4,16 @@ import Navbar from "./Navbar";
 import Orders from "./Orders";
 
 //Ele faz o gerenciamento das rotas
-function Routes() {
+function Routes() { //Componente
     return (
         <BrowserRouter>
             <Navbar />
             <Switch>
                 <Route path="/orders"> {/*Quando for digitado na url irá para os pedidos*/}
-                    <Orders />
+                    <Orders /> {/*chamando os pedidos*/}
                 </Route>
                 <Route path="/">
-                    <Home />
+                    <Home /> {/*chamando a pagina home*/}
                 </Route>
             </Switch>
         </BrowserRouter>
@@ -22,3 +22,5 @@ function Routes() {
 export default Routes;
 //ESTUDAR MAIS SOBRE REACT ROUTE
 //A ROTA É USADA ATRAVÉS DA URL DO NAVEGADOR
+/*O React trabalha por componentes das páginas web, ou seja,
+cada componente terá sua funcionalidade. (como uma função em Javascript)*/

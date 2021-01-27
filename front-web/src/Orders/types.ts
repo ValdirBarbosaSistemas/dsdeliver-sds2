@@ -1,5 +1,3 @@
-import OrderLocation from "./OrderLocation";
-
 export type Product = {
   id: number;
   name: string;
@@ -21,7 +19,8 @@ type ProductId = {
 
 export type OrderPayload = {
   products: ProductId[];
-  // latitude: number; (PARA NÃO PRECISAR DE FAZER ISSO, BASTA COLOCAR UM '&' E O
-  // longitude: number; NOME DO TIPO QUE QUER PEGAR OS DADOS)
+  // latitude: number; 
+  // longitude: number; 
   // address: string;
 } & OrderLocationData;
+//(PARA NÃO PRECISAR DE FAZER ISSO, BASTA COLOCAR UM '&' E O NOME DO TIPO QUE QUER PEGAR OS DADOS)

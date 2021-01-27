@@ -26,9 +26,6 @@ function ProductCard({ product, onSelectProduct, isSelected }: Props) {
                 <h3>
                     {product.description}
                 </h3>
-                <p>
-                    Descrição Uma deliciosa combinação de linguiça calabresa, rodelas de azeitonas pretas, mussarela, poupa de tomate, orégano e massa especial.
-                </p>
             </div>
         </div>
     )

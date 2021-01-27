@@ -54,7 +54,7 @@ function OrderLocation({ onChangeLocation }: Props) {
         onChangeLocation({
             latitude: place.position.lat,
             longitude: place.position.lng,
-            address: place.label! //'!' serve para dizer que o label sera preenchido
+            address: place.label! //'!' serve para dizer que o label sera preenchido OBRIGATORIAMENTE
         });
     };
 
