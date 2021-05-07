@@ -6,10 +6,15 @@ import com.devsuperior.dsdeliver.entities.Product;
 
 public class ProductDTO implements Serializable {
 //FIXME VER DEPOIS A IMPORTÂNCIA DO (DTO) COM MAIS AFINCO
-	
+
 	/*
-	 * DTO significa que ele só vai mandar ao cliente os dados do que EU PERMITIR
-	 * DTO é um DESIGN PATTERN
+	 * DTO é um objeto simples, para trafegar os dados sem que esse objeto seja
+	 * atrelado a uma conexão com o banco de dados, ou uma transação. TODA CAMADA DE
+	 * CONEXÃO COM O BANCO FICARÁ NA CAMADA DE SERVICO, depois que precisar de tudo
+	 * na camada de servico, eu vou copiar os dados das entidades para novos objetos
+	 * e dessa forma eu consigo gerar um controlador mais simples. Significa que
+	 * pelo conceito do padrão de camadas, ele só vai mandar ao cliente os dados do
+	 * que EU PERMITIR. (VER MAIS SOBRE DTO)
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -31,7 +36,8 @@ public class ProductDTO implements Serializable {
 		this.imageUri = imageUri;
 	}
 
-	// No DTO vemos que ele pega os dados da ENTIDADE Product sem precisar do THIS
+	// No DTO vemos que ele pega os dados da ENTIDADE Product sem precisar do THIS,
+	// pois
 	public ProductDTO(Product entity) {
 		id = entity.getId();
 		name = entity.getName();
